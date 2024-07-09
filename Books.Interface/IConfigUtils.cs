@@ -1,6 +1,6 @@
 ﻿namespace Books.Interface
 {
-    internal class IBook
+    public class IConfigUtils
     {
     }
 }

@@ -1,6 +1,6 @@
 namespace Books.Test
 {
-    public class Tests
+    public class BookTest
     {
         [SetUp]
         public void Setup()
