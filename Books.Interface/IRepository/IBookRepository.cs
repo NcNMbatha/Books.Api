@@ -1,7 +1,6 @@
 ﻿namespace Books.Interface.IRepository
 {
-    public class IBookRepository
+    public interface IBookRepository
     {
-
     }
 }

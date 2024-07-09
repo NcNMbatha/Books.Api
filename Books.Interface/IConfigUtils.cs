@@ -1,6 +1,7 @@
 ﻿namespace Books.Interface
 {
-    public class IConfigUtils
+    public interface IConfigUtils
     {
+        string GetBooksConnectionString { get; }
     }
 }

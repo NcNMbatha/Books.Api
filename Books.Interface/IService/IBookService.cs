@@ -1,6 +1,6 @@
 ﻿namespace Books.Interface.IService
 {
-    public class IBookService
+    public interface IBookService
     {
     }
 }

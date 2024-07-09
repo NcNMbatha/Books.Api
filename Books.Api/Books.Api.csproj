@@ -13,7 +13,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="IoC\" />
+    <ProjectReference Include="..\Books.Interface\Books.Interface.csproj" />
+    <ProjectReference Include="..\Books.Repository\Books.Repository.csproj" />
   </ItemGroup>
 
 </Project>

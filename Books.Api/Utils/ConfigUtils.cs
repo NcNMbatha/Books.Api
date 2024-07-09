@@ -1,6 +1,8 @@
-﻿namespace Books.Api.Utils
+﻿using Books.Interface;
+
+namespace Books.Api.Utils
 {
-    public class ConfigUtils
+    public class ConfigUtils: IConfigUtils
     {
         public ConfigUtils(){ }
 
