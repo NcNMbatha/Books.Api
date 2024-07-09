@@ -2,7 +2,9 @@
 using Books.Api.Utils;
 using Books.Interface;
 using Books.Interface.IRepository;
+using Books.Interface.IService;
 using Books.Repository;
+using Books.Service;
 
 namespace Books.Api.IoC
 {
@@ -33,6 +35,9 @@ namespace Books.Api.IoC
         {
             builder.RegisterType<ConfigUtils>()
                   .As<IConfigUtils>().InstancePerDependency();
+
+            builder.RegisterType<BookService>()
+                 .As<IBookService>().InstancePerDependency();
         }
     }
 }
