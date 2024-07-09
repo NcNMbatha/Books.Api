@@ -18,6 +18,9 @@ builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory())
     builder.RegisterModule(new AutofacModule(new ConfigUtils()));
 });
 
+// Add logging
+builder.Services.AddLogging();
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
