@@ -12,7 +12,7 @@ BEGIN
 UPDATE Books
 	SET Title = @Title, 
 		Author = @Author, 
-		PublishedDate = @PublishedDate,
+		PublicationDate = @PublicationDate,
 		ShortDescription = @ShortDescription,
 		ISBN = @ISBN,
 		Genre = @Genre,

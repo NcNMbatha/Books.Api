@@ -5,7 +5,7 @@ CREATE TABLE Books(
 	ISBN NVARCHAR(30),
 	Genre VARCHAR(50),
 	PublicationDate DATETIME,
-	ShortDescriptrion TEXT,
+	ShortDescription TEXT,
 	Price DECIMAL
 )
 
