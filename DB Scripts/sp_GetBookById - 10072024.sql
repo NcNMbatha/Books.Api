@@ -1,0 +1,7 @@
+CREATE PROCEDURE sp_GetBookById
+    @Id INT
+AS
+BEGIN
+    SELECT * FROM Books WHERE Id = @Id
+END
+GO

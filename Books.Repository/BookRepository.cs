@@ -24,13 +24,7 @@ namespace Books.Repository
         {
             using (var connection = CreateConnection())
             {
-                var parameters = new DynamicParameters();
-                parameters.Add("@Title", book.Title);
-                parameters.Add("@Author", book.Author);
-                parameters.Add("@Text", book.Text);
-                parameters.Add("@Year", book.Year);
-                parameters.Add("@Price", book.Price);
-
+                var parameters = DynamicParameters(book);
                 var result = await connection.ExecuteAsync("sp_CreateBook", parameters, commandType: CommandType.StoredProcedure);
                 return result;
             }
@@ -61,13 +55,7 @@ namespace Books.Repository
         {
             using (var connection = CreateConnection())
             {
-                var parameters = new DynamicParameters();
-                parameters.Add("@Title", book.Title);
-                parameters.Add("@Author", book.Author);
-                parameters.Add("@Text", book.Text);
-                parameters.Add("@Year", book.Year);
-                parameters.Add("@Price", book.Price);
-
+                var parameters = DynamicParameters(book);
                 var result = await connection.ExecuteAsync("sp_UpdateBook", parameters, commandType: CommandType.StoredProcedure);
                 return result;
             }
@@ -83,6 +71,20 @@ namespace Books.Repository
                 var result = await connection.ExecuteAsync("sp_DeleteBook", parameters, commandType: CommandType.StoredProcedure);
                 return result;
             }
+        }
+
+        private DynamicParameters DynamicParameters(Book book)
+        {
+            var parameters = new DynamicParameters();
+            parameters.Add("@Title", book.Title);
+            parameters.Add("@Author", book.Author);
+            parameters.Add("@ISBN", book.ISBN);
+            parameters.Add("@Genre", book.Genre);
+            parameters.Add("@PublicationDate", book.PublicationDate);
+            parameters.Add("@ShortDescription", book.ShortDescription);
+            parameters.Add("@Price", book.Price);
+
+            return parameters;
         }
 
     }
