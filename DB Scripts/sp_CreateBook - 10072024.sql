@@ -1,5 +1,4 @@
 CREATE PROCEDURE sp_CreateBook
-    @Id INT,
     @Title NVARCHAR(200),
     @Author NVARCHAR(150),
     @PublicationDate DATETIME,
@@ -9,8 +8,8 @@ CREATE PROCEDURE sp_CreateBook
 	@Price NVARCHAR(50)
 AS
 BEGIN
-    INSERT INTO Books (Title, Author, PublicationDate,Price, ShortDescription, @ISBN, @Genre, @Price)
-    VALUES (@Title, @Author, @PublicationDate, @ShortDescription, @ISBN, @Genre, @Price)
+    INSERT INTO Books (Title, Author, ISBN, Genre, PublicationDate, ShortDescriptrion, Price)
+    VALUES (@Title, @Author, @ISBN, @Genre, @PublicationDate, @ShortDescription,  @Price)
 END
 GO
 

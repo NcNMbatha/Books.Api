@@ -1,1 +1,1 @@
-CREATE DATABASE OlineBooks;
+CREATE DATABASE OnlineBooks;
