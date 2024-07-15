@@ -17,6 +17,11 @@ builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory())
 {
     builder.RegisterModule(new AutofacModule(new ConfigUtils()));
 });
+builder.Services.AddCors(options => options.AddPolicy(name: "BooksPolicy",
+policy =>
+{
+    policy.WithOrigins("http://localhost:4200").AllowAnyMethod().AllowAnyHeader();
+}));
 
 // Add logging
 builder.Services.AddLogging();
