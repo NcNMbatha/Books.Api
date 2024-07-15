@@ -12,11 +12,13 @@ builder.Services.AddControllers(options =>
 {
     options.Filters.Add<ExceptionHandlingFilter>();
 });
+
 builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory())
 .ConfigureContainer<ContainerBuilder>(builder =>
 {
     builder.RegisterModule(new AutofacModule(new ConfigUtils()));
 });
+
 builder.Services.AddCors(options => options.AddPolicy(name: "BooksPolicy",
 policy =>
 {
